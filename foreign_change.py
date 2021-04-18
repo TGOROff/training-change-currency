@@ -12,6 +12,16 @@ import math
 
 
 def canGetExactChange(targetMoney, denominations):
+    denominations.sort()
+    denominations.reverse()
+    remainder = targetMoney
+    for denominations in denominations:
+        if remainder % denominations == 0:
+            return True
+        else:
+            remainder = remainder % denominations
+    return False
+
 
 
 # Write your code here
